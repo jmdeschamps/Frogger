@@ -5,7 +5,19 @@ class Modele():
         self.largeur = 1600
         self.hauteur = 900
         self.terrain = Terrain(self)
+        self.frog = Frog(self)
 
+    def frog_monter(self):
+        self.frog.position = [self.frog.position[0],
+                              self.frog.position[1]-10]
+
+class Frog():
+    def __init__(self, parent):
+        self.position = [50,95]
+        self.img_h = None
+        self.img_d = None
+        self.img_b = None
+        self.img_g = None
 class Terrain():
     def __init__(self, parent):
         self.parent = parent
